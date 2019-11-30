@@ -1,0 +1,85 @@
+{% extends 'whiskey_list/base.html' %}
+{% block content %}
+{% load static %}
+
+<main role="main" class="container-fluid">
+	<div class='row text-right pt-1'>
+		<div class='col-sm-12'>
+			<div class='login-items'>
+				{% if user.is_authenticated %}
+					<a href="{% url 'admin:index' %}" aria-label="Admin Page">Admin Console</a> 
+					&nbsp;|&nbsp;
+					<a href="{% url 'logout' %}" aria-label="Logout">
+						Logout
+					</a>
+				{% else %}
+					<a href="{% url 'login' %}" aria-label= "Admin Login">
+						Admin Login
+					</a>
+				{% endif %}
+				</div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-12 pt-3 text-center' id='title_text'>
+			JC's Whiskey House
+		</div>
+		<div class='col-sm-12 text-center pb-3' id='subtitle_text'>
+				Olympia, Washington
+		</div>
+	</div>
+	<div class='row h-100'>
+		<div class="col-md-1">
+		</div>
+		<div class= "col-md-10">
+			<table class="table display w-100 table-bordered " id="spirit_table">
+				<thead>
+					<tr>
+						<th scope="col">Distillery</th>
+						<th scope="col">Brand</th>
+						<th scope="col">Release</th>
+						<th scope="col" class='text-center'>Age</th>
+						<th scope="col" class='text-center'>Proof</th>
+						<th scope="col" class='text-center'>ABV</th>
+						<th scope="col" class='text-center'>Quantity</th>
+						<th scope="col">Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for spirit in spirits %}
+						<tr>
+							<th scope="row">{{ spirit.distillery }}</th>
+							<td>{{ spirit.brand }}</td>
+							<td>{{ spirit.release }}</td>
+							{% if spirit.age == 0 %}
+								<td class='text-center'>NAS</td>
+							{% else %}
+								<td class='text-center'>{{ spirit.age }} Yrs</td>
+							{% endif %}
+							<td class='text-center'>{{ spirit.proof}}</td>
+							<td class='text-center'>{{ spirit.abv }}</td>
+							<td class='text-center'>{{ spirit.quantity }}</td>
+							<td>{{ spirit.notes }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-sm-12 pt-5 text-center'>
+			<a href="https://www.instagram.com/bourbonrye/" aria-label="Visit Instagram page">			
+				<i class="fab fa-instagram fa-2x pb-2"></i>	
+			</a>		
+		</div>	
+	</div>
+</main><!-- /.container -->
+
+{% endblock %}
+
+
+
+
+

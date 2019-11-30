@@ -1,0 +1,30 @@
+{% extends 'whiskey_list/base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container-fluid" style="min-height: 100%">
+    <div class='row'>
+            <div class='col-sm-12 pt-3 text-center' id='title_text'>
+                JC's Whiskey House
+            </div>
+            <div class='col-sm-12 text-center pb-3' id='subtitle_text'>
+                    Olympia, Washington
+            </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-12 align-middle mt-4" id='login_form'>
+            <h4>Admin Login</h4>
+            <hr class="login-line">
+            <form method="post" class="ml-4" aria-label="Login Form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="button" class="btn btn-sm border-0 text-white btn-secondary" style="padding:5px 10px;" onclick="location.href='{% url 'index' %}'" aria-label="Back Button"><i class="fas fa-chevron-left"></i>&nbsp;&nbsp;Back</button>
+                <button type="submit" class="btn btn-sm border-0 text-white btn-primary m-2" aria-label="Login Button"><i class="fas fa-key"></i>&nbsp;&nbsp;Sign In</button>
+            </form>
+            <hr class="login-line">
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}

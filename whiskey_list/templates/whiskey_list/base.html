@@ -1,0 +1,41 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="A Django app for displaying my whiskey collection">
+		<meta name="author" content="Josh Clark">
+		<title>JC's Whiskey House</title>
+
+        <script src="https://kit.fontawesome.com/c040f54e02.js" crossorigin="anonymous"></script>
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" type="text/css" href="{% static 'whiskey_list/vendor/Bootstrap-4-4.1.1/css/bootstrap.min.css' %}">
+		<!-- Datatables CSS -->
+		<link rel="stylesheet" type="text/css" href="{% static 'whiskey_list/vendor/jquery-ui-1.12.1/jquery-ui.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'whiskey_list/vendor/DataTables-1.10.20/css/dataTables.jqueryui.min.css' %}">
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo:700|Averia+Serif+Libre&display=swap" rel="stylesheet">
+		<!-- Site CSS -->
+		<link rel="stylesheet" type="text/css" href="{% static 'whiskey_list/css/style.css' %}">
+	</head>
+    <body>
+
+    <!-- CONTENT -->
+    {% block content %}
+    {% endblock %}
+
+    <!-- SCRIPTS -->
+	<!-- jQuery Core -->
+	<script src="{% static 'whiskey_list/vendor/jQuery-3.3.1/jquery-3.3.1.min.js' %}"></script>
+	<!-- Bootstrap Core -->
+	<script src="{% static 'whiskey_list/vendor/Bootstrap-4-4.1.1/js/bootstrap.min.js' %}"></script>
+	<!-- DataTables -->
+	<script src="{% static 'whiskey_list/vendor/datatables.min.js' %}"></script>
+    <script src="{% static 'whiskey_list/vendor/DataTables-1.10.20/js/dataTables.jqueryui.min.js' %}"></script>
+	<!-- Site JS -->
+    <script src="{% static 'whiskey_list/js/site.js' %}"></script>
+    
+    </body>
+</html>
