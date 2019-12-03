@@ -45,8 +45,8 @@ div.dataTables_filter input {
 }
 
 .dataTables_filter, .dataTables_filter>label {
-   width: 75%;
-   margin-bottom: 0.7em;
+    width: 75%;
+    margin-bottom: 0.7em;
 }
 
 .dataTables_info{
@@ -72,6 +72,12 @@ input[type="search"]:focus{
     outline: 0 none;
 }
 
+#title_text{
+    font-size: 3.9em;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #FAFAFA;
+}
+
 #login_form{
     font-family: 'Averia Serif Libre', cursive;
     font-size: 0.75em;
@@ -84,8 +90,8 @@ input[type="search"]:focus{
     color: #FAFAFA;
 }
 
-#title_text{
-    font-size: 3.9em;
+#total_row{
+    font-size: 1em;
     font-family: 'Nanum Myeongjo', serif;
     color: #FAFAFA;
 }

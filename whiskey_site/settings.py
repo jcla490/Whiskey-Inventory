@@ -128,7 +128,7 @@ USE_TZ = True
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, "whiskey_site/static/")
 LOGIN_REDIRECT_URL = '/admin'
 LOGOUT_REDIRECT_URL = '/'
 
