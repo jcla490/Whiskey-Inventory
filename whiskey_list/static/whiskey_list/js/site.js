@@ -17,14 +17,19 @@ $(document).ready( function () {
         paging:   false,
         order: [[ 0, "asc" ]],
         scrollX: true, 
-        dom: '<lf<i<"#total_whiskies">><t>>',
+        dom: '<lf<i><t>>',
         language: {
             searchPlaceholder: "Search whiskies (and rums!)",
             search: "",
             zeroRecords: "I don't own this...yet!",
-            infoEmpty: "Showing 0 whiskies?!? How can this be??",
-            info: "Showing _TOTAL_ of _MAX_ unique whiskies",
+            infoEmpty: "Showing 0 spirits?!? How can this be??",
+            info: "Showing _TOTAL_ of _MAX_ unique spirits",
             infoFiltered:   "",
+        },
+        drawCallback: function () {
+            var total = this.api().column( 6 ).data().sum();
+            console.log(total);
+            $("#bottle_span").text(total);
         },
         columnDefs: [ {
             targets: [ 0 ],
