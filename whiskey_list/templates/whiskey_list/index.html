@@ -38,9 +38,9 @@
 						<th scope="col">Distillery</th>
 						<th scope="col">Brand</th>
 						<th scope="col">Release</th>
+						<th scope="col">Type</th>
 						<th scope="col" class='text-center'>Age</th>
 						<th scope="col" class='text-center'>Proof</th>
-						<th scope="col" class='text-center'>ABV</th>
 						<th scope="col" class='text-center'>Quantity</th>
 						<th scope="col">Notes</th>
 					</tr>
@@ -51,13 +51,25 @@
 							<th scope="row">{{ spirit.distillery }}</th>
 							<td>{{ spirit.brand }}</td>
 							<td>{{ spirit.release }}</td>
+							{% if spirit.whiskey_type == "RUM" %}
+								<td>Rum</td>
+							{% elif spirit.whiskey_type == 'BOU' %}
+								<td>Bourbon</td>
+							{% elif spirit.whiskey_type == 'AMR' %}
+								<td>Rye</td>
+							{% elif spirit.whiskey_type == 'AMW' %}
+								<td>American</td>
+							{% elif spirit.whiskey_type == 'CAN' %}
+								<td>Canadian</td>
+							{% else %}
+								<td>Not Found</td>
+							{% endif %}	
 							{% if spirit.age == 0 %}
 								<td class='text-center'>NAS</td>
 							{% else %}
 								<td class='text-center'>{{ spirit.age }} Yrs</td>
 							{% endif %}
 							<td class='text-center'>{{ spirit.proof}}</td>
-							<td class='text-center'>{{ spirit.abv }}</td>
 							<td class='text-center'>{{ spirit.quantity }}</td>
 							<td>{{ spirit.notes }}</td>
 						</tr>
