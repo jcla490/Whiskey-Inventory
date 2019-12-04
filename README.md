@@ -12,7 +12,7 @@ Database - sqlite (dev) / amazon rds mysql (prod)
 
 Languages - python, javascript/jquery, html/css, django templates
 
-Frameworks - Django, bootstrap4
+Frameworks - django, bootstrap4
 
 Plug-ins - datatables.js
 
