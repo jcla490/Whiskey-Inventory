@@ -7,6 +7,10 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Spirit (models.Model):
     def __str__(self):
         return self.distillery + " " + self.brand + " " + self.release
+
+    def total_value(self):
+        return self.valuation
+
     SPIRIT_TYPES = (
         ('AMW', 'American Whiskey'),
         ('AMR', 'American Rye'),
