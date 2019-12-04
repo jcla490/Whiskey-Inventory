@@ -8,7 +8,7 @@ Virtual Env - conda
 
 Version Control - git
 
-Database - sqlite (dev) / amazon rds (prod)
+Database - sqlite (dev) / amazon rds mysql (prod)
 
 Languages - python, javascript/jquery, html/css, django templates
 
@@ -17,4 +17,6 @@ Frameworks - Django, bootstrap4
 Plug-ins - datatables.js
 
 Styling - fontawesome, google fonts
+
+Deployment - amazon elastic beanstalk
 
